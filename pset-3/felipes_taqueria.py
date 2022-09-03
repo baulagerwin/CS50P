@@ -1,16 +1,32 @@
-def main():
-    # prompts user to place an order
-    try:
-        item = input("input")
-    except EOFError:
-        ...
-    # one per line of items
+def main():    
+    menu = {
+        "Baja Taco": 4.00,
+        "Burrito": 7.50,
+        "Bowl": 8.50,
+        "Nachos": 11.00,
+        "Quesadilla": 8.50,
+        "Super Burrito": 8.50,
+        "Super Quesadilla": 9.50,
+        "Taco": 3.00,
+        "Tortilla Salad": 8.00
+    }
     
-    # ignore any input that isn't an item
+    total_cost = 0
     
-    # until user inputs control-d
-    
-    # out the total cost of all items prefixed with $ sign
-    # and formatted with 2 decimal places
+    while True:
+        try:
+            item = input("Item: ").strip().title()
+            
+            if item in menu:
+                total_cost = total_cost + menu[item]
+            else: 
+                raise KeyError
+        except EOFError:
+            break
+        except (ValueError, KeyError):
+            pass
+        else:
+            print(f"Total: ${total_cost:.2f}")
+        
     
 main()
