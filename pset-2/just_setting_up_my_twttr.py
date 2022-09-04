@@ -3,12 +3,17 @@
 # outputs the same text but without A, E, I, O, U
 
 def main():
-    text = input().strip()
+    letters = input("Input: ").strip()
+    output = ""
+    vowels = "AEIOUaeiou"
     
-    for letter in text:
-        if letter == "a" or letter == "e" or letter == "i" or letter == "o" or letter == "u":
-            letter = letter.replace(letter, "")
-            
-        print(letter, end="")
+    for letter in letters:
+        for vowel in vowels:
+            if letter == vowel:
+                letter = letter.replace(letter, "")
+                
+        output = output + letter
     
+    print(f"Output: {output}")
+
 main()

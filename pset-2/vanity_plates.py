@@ -28,12 +28,15 @@ def is_valid(s):
             if j <= i:
                 continue
             
+            if last_chars[0] == "0" and isdigit(last_chars[1]):
+                return False
+            
             # checks if the current char is 0
-            if last_chars[i] == "0":
+            if isalpha(last_chars[j - 1]) and last_chars[j] == "0":
                 return False
             
             # checks if the current char is not a digit
-            if not isdigit(last_chars[j]):
+            if isdigit(last_chars[j - 1]) and isalpha(last_chars[j]):
                 return False
                 
     return True
