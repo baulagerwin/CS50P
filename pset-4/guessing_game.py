@@ -1,4 +1,5 @@
 from random import randint
+import sys
 
 
 def main():
@@ -15,8 +16,7 @@ def main():
         result = validate_number(random_number, number)
         
         if result.lower() == "just right!":
-            print(result)
-            break
+            sys.exit(result)
     
         print(result)
     

@@ -1,11 +1,6 @@
 from curses.ascii import isdigit
 
 def main():
-    # prompts for a date in anno Domini, month-day-year order or September 8, 1636
-    
-    # reprompt the user if he/she inputs an invalid date
-    
-    # output the same date in YYYY-MM-DD format
     months = [
         "January",
         "February",
@@ -55,10 +50,10 @@ def main():
                 day = int(day)
                 year = int(year)
                 
-            elif " " in anno_domini_date and not "/" in anno_domini_date:
+            elif " " in anno_domini_date and not "/" in anno_domini_date and anno_domini_date.__contains__(","):
                 date_splitted = anno_domini_date.split(" ")
                                 
-                # # checks if its a date
+                # checks if its a date
                 if len(date_splitted) != 3:
                     raise ValueError
                 

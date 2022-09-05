@@ -39,4 +39,5 @@ def calculate_percentage(nume, deno):
 def format_percentage(percent):
     return str(percent) + "%"
 
-main()
+if __name__ == "__main__":
+    main()
