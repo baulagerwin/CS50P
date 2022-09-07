@@ -14,8 +14,8 @@ def main():
             with open(sys.argv[1], "r") as file:
                 reader = csv.DictReader(file)
                 for text in reader:
-                    first_name, last_name = text["name"].split(", ")
-                    datas.append({ "first": first_name, "last": last_name, "house": text["house"] })
+                    last_name, first_name = text["name"].split(", ")
+                    datas.append({ "first": first_name, "last": f" {last_name}", "house": text["house"] })
                 
             with open(sys.argv[2], "w", newline="") as file:
                 writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
