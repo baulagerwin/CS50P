@@ -1,27 +1,9 @@
-from mock_subjects import get_subjects, get_things_todo
-from pyfiglet import Figlet
-import re
+from views.menu import main_menu
+from views.intro import intro
 
 def main():
-    figlet = Figlet()
-    figlet.setFont(font="small")
-    print(figlet.renderText("Welcome to Studious"))
-    print("An application where you can review a subject by generating a random question with their respective answer.")
-    print()
-    input("Press enter to get started...")
-    
-    print()
-    print("********************************************")
-    print()
-    
-    todos = get_things_todo()
-    print("Menu: ")
-    for i, todo in enumerate(todos):
-        print(f"{i + 1}. {todo}")
-    todo = input("What would you like to do? ").strip().lower()
-    
-    if re.search(r".*\breview\b.*", todo):
-        print("Review")
+    # intro()
+    main_menu()
 
 def function_1():
     ...
