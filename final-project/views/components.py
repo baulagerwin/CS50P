@@ -6,15 +6,24 @@ def border():
     print("********************************************")
     print()
     
-def enumerate_to_do(menu, todos):
-    print(menu)
-    for i, todo in enumerate(todos):
-        print(f"{i + 1}. {todo}")
-    print()
-        
-def validate_to_do(prompt, map, error_msg):
+def exit():
+    sys.exit()
+    
+def go_back():
+    raise EOFError
+    
+def menu(menu_text, prompt, map, error_msg):
     while True:
         try:
+            border()
+            
+            print(menu_text)
+            
+            for i, todo in enumerate(map):
+                mapped = todo["todo"]
+                print(f"{i + 1}. {mapped}")
+            print()
+            
             todo = input(prompt).strip().lower()
             passed_level = 0
             func = ""
@@ -51,6 +60,6 @@ def validate_to_do(prompt, map, error_msg):
                 
         except ValueError as error_message:
             print(error_message)
+        except EOFError:
+            break
         
-def exit():
-    sys.exit()

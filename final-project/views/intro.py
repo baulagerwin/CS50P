@@ -1,6 +1,6 @@
 from pyfiglet import Figlet
 
-from .paraphernalia import border
+from .components import border
 
 def intro():
     figlet = Figlet()

@@ -1,24 +1,14 @@
-from .choices import todo_adding_subject
-from .paraphernalia import border, enumerate_to_do
-
 def add_subject():
-    border()
-    
-    todos = todo_adding_subject()
-    enumerate_to_do("--Add Menu", todos)
-    todo = input("What would you like to do? ")
-    
-    
-def add_item():
-    item = input("Item: ").strip().lower()
+    item = input("Subject: ").strip().lower()
     return item
-    
-def add_multiple_items():
+
+def add_multiple_subjects():
     things = []
     
+    print("Type the subjects below:")
     while True:
         try:
-            item = input("Items: ").strip().lower()
+            item = input().strip().lower()
                         
             if item not in things:
                 things.append(item)

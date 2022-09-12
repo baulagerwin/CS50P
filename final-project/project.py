@@ -1,8 +1,8 @@
-from views.menu import main_menu
+from views.main_menu import main_menu
 from views.intro import intro
 
 def main():
-    # intro()
+    intro()
     main_menu()
 
 def function_1():
@@ -21,11 +21,3 @@ if __name__ == "__main__":
     main()
     
     # autopep8
-    # subjects = get_subjects()
-    # for i, subject in enumerate(subjects):
-    #     print(f"{i + 1}. {subject}")
-    # input("Choose a subject: ")
-
-    # print()
-    # print("********************************************")
-    # print()
