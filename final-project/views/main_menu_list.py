@@ -1,7 +1,7 @@
 from .review_subject import review_subject
-from .add_subject_menu import add_subject_menu
+from .add_subject.add_subject_menu import add_subject_menu
 from .search_subject import search_subject
-from .view_subject import view_subject
+from .view_subjects import view_subjects
 from .update_subject import update_subject
 from .delete_subject import delete_subject
 
@@ -29,7 +29,7 @@ def subject_menu():
             "todo": "View subjects",
             "match": "view",
             "unmatches": ["review", "add", "search", "update", "delete", "exit"],
-            "function": view_subject
+            "function": view_subjects
         },
         {
             "todo": "Update a subject",

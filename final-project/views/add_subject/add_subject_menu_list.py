@@ -1,5 +1,6 @@
-from .add_subject import add_subject, add_multiple_subjects
-from .components import go_back
+from .add_subject import add_subject
+from .add_subjects import add_multiple_subjects
+from ..components import go_back
 
 def add_subject_menu_list():
     return [
