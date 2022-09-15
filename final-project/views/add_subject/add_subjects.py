@@ -1,5 +1,9 @@
 from ..components import border
 from controllers.subject_controller import add_subjects_controller
+import inflect
+from ..sleep import delay
+
+engine = inflect.engine()
 
 def add_multiple_subjects():
     things = []
@@ -25,4 +29,10 @@ def add_multiple_subjects():
     try:
         add_subjects_controller(things)
     except FileExistsError as e:
+        border()
         print(e)
+        delay()
+    else:
+        border()
+        print(f"{engine.join(things).capitalize()} are added successfully!")
+        delay()

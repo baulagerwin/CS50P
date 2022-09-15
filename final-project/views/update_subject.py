@@ -1,5 +1,6 @@
 from .components import border
 from controllers.subject_controller import update_subject_controller
+from .sleep import delay
 
 def update_subject():
     border()
@@ -10,4 +11,8 @@ def update_subject():
     except FileNotFoundError as e:
         border()
         print(e)
-        
+        delay()
+    else:
+        border()
+        print("Updated sucessfully!")
+        delay()
