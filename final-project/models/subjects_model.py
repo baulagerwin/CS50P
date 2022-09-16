@@ -5,17 +5,13 @@ csv_directory = "csv_files"
 subjects_path = os.path.join(csv_directory, "subjects.csv")
 
 def init_subjects():
-  
-  try:
-    with open(subjects_path, "x") as specific_subject:
-     pass
-  except (FileExistsError):
+  if os.path.exists(subjects_path):
     return
   
   with open(subjects_path, "w", newline="") as subjects_file:
     subjects_writer = csv.DictWriter(subjects_file, fieldnames=["subject"])
     subjects_writer.writeheader()
-
+    
 def sort_subjects():
   subjects = get_subjects_content()
   

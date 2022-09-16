@@ -17,4 +17,4 @@ def search_subject():
     else:
         border()
         search_subject = search_subject_menu_list()
-        menu(f"--{subject.title()} Menu", "What would you like to do? ", search_subject, "--INVALID INPUT: Type what you'd like to do.")
+        menu(f"--{subject.title()} Menu", "What would you like to do? ", search_subject, "--INVALID INPUT: Type what you'd like to do.", subject)

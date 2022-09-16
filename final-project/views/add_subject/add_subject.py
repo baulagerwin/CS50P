@@ -17,5 +17,3 @@ def add_subject():
         border()
         print(f"{item.title()} added succesfully.")
         delay()
-    
-    border()

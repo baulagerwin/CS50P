@@ -9,10 +9,13 @@ def border():
 def exit():
     sys.exit()
     
+def go_back_with_arg(subject):
+    raise EOFError
+
 def go_back():
     raise EOFError
     
-def menu(menu_text, prompt, map, error_msg):
+def menu(menu_text, prompt, map, error_msg, prop):
     while True:
         try:
             border()
@@ -53,8 +56,10 @@ def menu(menu_text, prompt, map, error_msg):
                     func = item["function"]
                     break
             
-            if passed_level == 2:
+            if passed_level == 2 and not prop:
                 func()
+            elif passed_level == 2 and prop:
+                func(prop)
             else:
                 raise ValueError(error_msg)
                 

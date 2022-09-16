@@ -1,2 +1,2 @@
-def delete_qna():
+def delete_qna(subject):
   print("deleting qna")

@@ -1,2 +1,2 @@
-def update_qna():
+def update_qna(subject):
   print("updating qna")
