@@ -7,6 +7,8 @@ from models.search_subject_model import search_subject_model
 from models.add_qna_model import add_qna_model
 from models.add_multiple_qna_model import add_multiple_qna_model
 from models.view_qnas_model import view_qnas_model
+from models.update_qna_model import update_qna_model
+from models.delete_qna_model import delete_qna_model
 
 def add_subject_controller(subject):
   try:
@@ -53,5 +55,17 @@ def add_multiple_qna_controller(subject, list_of_qna):
   except ValueError as e:
     raise ValueError(e)
   
-def view_qnas_controller(subject):
+def view_qna_controller(subject):
   return view_qnas_model(subject)
+
+def update_qna_controller(subject, id, qna):
+  try:
+    update_qna_model(subject, id, qna)
+  except ValueError as e:
+    raise ValueError(e)
+  
+def delete_qna_controller(subject, id):
+  try:
+    delete_qna_model(subject, id)
+  except ValueError as e:
+    raise ValueError(e)

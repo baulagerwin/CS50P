@@ -3,6 +3,7 @@ import os
 import inflect
 from .subjects_model import init_subjects, get_subjects_content, sort_subjects
 from .add_subject_model import add_subject_model
+from .subject_model import get_subject_qnas
 
 csv_directory = "csv_files"
 engine = inflect.engine()
@@ -18,7 +19,7 @@ def update_subject_model(subject, updated_subject):
   new_subject_path = os.path.join(csv_directory, f"{updated_subject}.csv")
 
   subjects.remove(subject)
-  old_subject_contents = get_subject_content(old_subject_path)
+  old_subject_contents = get_subject_qnas(subject)
   os.remove(subjects_path)
   os.remove(old_subject_path)
   init_subjects()
@@ -37,13 +38,4 @@ def update_subject_model(subject, updated_subject):
   
   sort_subjects()
 
-def get_subject_content(file_path):
-  contents = []
-  
-  with open(file_path) as file:
-      reader = csv.DictReader(file)
-      for row in reader:
-        contents.append({ "question": row["question"], "answer": row["answer"] })
-        
-  return contents
 

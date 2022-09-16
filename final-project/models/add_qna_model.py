@@ -1,6 +1,8 @@
 import csv
 import os
 
+from .subject_model import sort_qnas
+
 def add_qna_model(subject, qna):
   csv_directory = "csv_files"
   subject_path = os.path.join(csv_directory, f"{subject}.csv")
@@ -15,3 +17,5 @@ def add_qna_model(subject, qna):
     with open(subject_path, "a", newline="") as subject_file:
       writer = csv.DictWriter(subject_file, fieldnames=["question", "answer"])
       writer.writerow({ "question": qna["question"], "answer": qna["answer"] })
+
+    sort_qnas(subject)

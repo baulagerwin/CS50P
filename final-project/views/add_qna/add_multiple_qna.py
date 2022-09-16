@@ -6,7 +6,7 @@ def add_multiple_qna(subject):
   things = []
     
   border()
-  print("Type the Q&A's below:")
+  print("Type the Q & A's below:")
   count = 1
   while True:
       try:
@@ -28,7 +28,6 @@ def add_multiple_qna(subject):
       except KeyError:
           pass
       except EOFError:
-          things = sorted(things, key=lambda d: d["question"]) 
           break
   
   try:

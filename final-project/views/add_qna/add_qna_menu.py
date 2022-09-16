@@ -5,4 +5,4 @@ from ..sleep import delay
 def add_qna_menu(subject):
   border()
   add_qna = add_qna_menu_list()
-  menu("--Add Q&A Menu", "Choose one of the above: ", add_qna, "--INVALID INPUT: Type how many you want to add", subject)
+  menu("--Add Q & A Menu", "Choose one of the above: ", add_qna, "--INVALID INPUT: Type how many you want to add", subject)

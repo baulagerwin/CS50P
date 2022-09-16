@@ -1,12 +1,12 @@
 from .components import border
-from controllers.subject_controller import view_qnas_controller
+from controllers.subject_controller import view_qna_controller
 
 def view_qna(subject):
   border()
-  qnas = view_qnas_controller(subject)
+  qnas = view_qna_controller(subject)
   
   if len(qnas):
-      print("Current Q&A's are the following: ")
+      print("Current Q & A's are the following: ")
       for i, qna in enumerate(qnas):
           question = qna["question"]
           answer = qna["answer"]
