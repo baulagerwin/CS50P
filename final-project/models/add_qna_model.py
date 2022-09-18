@@ -8,7 +8,7 @@ def add_qna_model(subject, qna):
   subject_path = os.path.join(csv_directory, f"{subject}.csv")
   
   if not qna["question"] and not qna["answer"]:
-    return
+    raise ValueError("--INVALID INPUT: Question and answer is empty.")
   elif qna["question"] and not qna["answer"]:
     raise ValueError("--INVALID INPUT: Question without answer.")
   elif not qna["question"] and qna["answer"]:

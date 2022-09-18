@@ -6,6 +6,9 @@ csv_directory = "csv_files"
 subjects_path = os.path.join(csv_directory, "subjects.csv")
 
 def delete_subject_model(subject):
+  if not subject:
+    raise ValueError("--INVALID INPUT: Subject name is empty.")
+  
   subjects = get_subjects_content()
   
   if not subject in subjects:

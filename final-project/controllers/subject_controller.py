@@ -9,16 +9,19 @@ from models.add_multiple_qna_model import add_multiple_qna_model
 from models.view_qnas_model import view_qnas_model
 from models.update_qna_model import update_qna_model
 from models.delete_qna_model import delete_qna_model
+from models.review_subject_model import review_subject_model
 
 def add_subject_controller(subject):
   try:
     add_subject_model(subject)
   except FileExistsError as e:
     raise FileExistsError(e)
+  except ValueError as e:
+    raise ValueError(e)
   
 def add_subjects_controller(subjects):
   try:
-    add_subjects_model(subjects)
+    return add_subjects_model(subjects)
   except FileExistsError as e:
     raise FileExistsError(e)
   
@@ -30,18 +33,24 @@ def update_subject_controller(subject, updated_subject):
     update_subject_model(subject, updated_subject)
   except FileNotFoundError as e:
     raise FileNotFoundError(e)
+  except ValueError as e:
+    raise ValueError(e)
   
 def delete_subject_controller(subject):
   try:
     delete_subject_model(subject)
   except FileNotFoundError as e:
     raise FileNotFoundError(e)
+  except ValueError as e:
+    raise ValueError(e)
   
 def search_subject_controller(subject):
   try:
     search_subject_model(subject)
   except FileNotFoundError as e:
     raise FileNotFoundError(e)
+  except ValueError as e:
+    raise ValueError(e)
   
 def add_qna_controller(subject, qna):
   try:
@@ -67,5 +76,11 @@ def update_qna_controller(subject, id, qna):
 def delete_qna_controller(subject, id):
   try:
     delete_qna_model(subject, id)
+  except ValueError as e:
+    raise ValueError(e)
+  
+def review_subject_controller(id):
+  try:
+    return review_subject_model(id)
   except ValueError as e:
     raise ValueError(e)

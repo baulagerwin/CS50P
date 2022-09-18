@@ -10,6 +10,9 @@ engine = inflect.engine()
 subjects_path = os.path.join(csv_directory, "subjects.csv")
     
 def update_subject_model(subject, updated_subject):
+  if not updated_subject:
+    raise ValueError("--INVALID INPUT: Updated name of subject is empty.")
+  
   subjects = get_subjects_content()
   
   if not subject in subjects:

@@ -26,4 +26,3 @@ def sort_qnas(subject):
     
     for qna in sorted(qnas, key=lambda d: d["question"]):
       qnas_writer.writerow({ "question": qna["question"], "answer": qna["answer"]})
-  

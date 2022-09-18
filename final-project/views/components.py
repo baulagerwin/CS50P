@@ -3,7 +3,8 @@ from re import search, escape
 
 def border():
     print()
-    print("********************************************")
+    print("*************************************************************")
+    print("*************************************************************")
     print()
     
 def exit():
@@ -64,6 +65,7 @@ def menu(menu_text, prompt, map, error_msg, prop):
                 raise ValueError(error_msg)
                 
         except ValueError as error_message:
+            border()
             print(error_message)
         except EOFError:
             break

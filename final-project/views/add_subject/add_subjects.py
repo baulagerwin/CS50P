@@ -14,7 +14,7 @@ def add_multiple_subjects():
         try:
             item = input().strip().lower()
                         
-            if item not in things and item:
+            if item not in things:
                 things.append(item)
             else:
                 raise ValueError()
@@ -27,12 +27,12 @@ def add_multiple_subjects():
             break
     
     try:
-        add_subjects_controller(things)
+        subjects = add_subjects_controller(things)
     except FileExistsError as e:
         border()
         print(e)
         delay()
     else:
         border()
-        print(f"{engine.join(things).capitalize()} are added successfully!")
+        print(f"{engine.join(subjects).capitalize()} are added successfully!")
         delay()

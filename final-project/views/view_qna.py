@@ -13,10 +13,10 @@ def view_qna(subject):
           print(f"{i + 1}. Q: {question}")
           print(f"   A: {answer}")
   else:
-      print("WOW! So empty!")
+      print("WOW! So empty! Add Q & A to this subject first.")
   
   try:
-      border()
+      print()
       input("Press enter to go back")
   except EOFError:
       return

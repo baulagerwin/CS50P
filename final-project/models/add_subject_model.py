@@ -1,10 +1,15 @@
 import csv
 import os
 
+from .subjects_model import sort_subjects
+
 csv_directory = "csv_files"
 subjects_path = os.path.join(csv_directory, "subjects.csv")
 
 def add_subject_model(subject):
+  if not subject:
+    raise ValueError(f"--INVALID INPUT: Subject name is empty")
+  
   subject_path = os.path.join(csv_directory, f"{subject}.csv")
   
   if os.path.exists(subject_path):
@@ -15,4 +20,7 @@ def add_subject_model(subject):
     subject_writer.writeheader()
     
     subjects_writer = csv.DictWriter(subjects_file, fieldnames=["subject"])
-    subjects_writer.writerow({ "subject": subject }) 
+    subjects_writer.writerow({ "subject": subject })
+    
+  sort_subjects()
+  

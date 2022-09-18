@@ -9,7 +9,7 @@ def add_subject():
         add_subject_controller(item)
     except EOFError:
         return
-    except FileExistsError as e:
+    except (FileExistsError, ValueError) as e:
         border()
         print(e)
         delay()

@@ -13,7 +13,7 @@ def view_subjects():
         print("WOW! So empty!")
     
     try:
-        border()
+        print()
         input("Press enter to go back")
     except EOFError:
         return
