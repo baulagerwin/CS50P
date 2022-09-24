@@ -1,3 +1,16 @@
 # CS50P
 
-An introduction to programming using a language called Python. Learn how to read and write code as well as how to test and “debug” it. Designed for students with or without prior programming experience who’d like to learn Python specifically. Learn about functions, arguments, and return values (oh my!); variables and types; conditionals and Boolean expressions; and loops. Learn how to handle exceptions, find and fix bugs, and write unit tests; use third-party libraries; validate and extract data with regular expressions; model real-world entities with classes, objects, methods, and properties; and read and write files. Hands-on opportunities for lots of practice. Exercises inspired by real-world programming problems.
+An introduction to programming using a language called Python where I learned the the following:
+
+-Functions and variables
+-Conditionals
+-Loops
+-Exceptions
+-Libraries
+-File I/O
+-Regular Expressions
+-Object-oriented Programming
+
+## CERTIFICATE
+
+[View Certificate](https://certificates.cs50.io/60fc3212-c162-4464-9d0d-cc6de52535c7.pdf?size=letter)
