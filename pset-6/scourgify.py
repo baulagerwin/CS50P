@@ -15,15 +15,15 @@ def main():
                 reader = csv.DictReader(file)
                 for text in reader:
                     last_name, first_name = text["name"].split(", ")
-                    datas.append({ "first": first_name, "last": f" {last_name}", "house": text["house"] })
-                
+                    datas.append({ "first": first_name, "last": last_name, "house": text["house"] })
+
             with open(sys.argv[2], "w", newline="") as file:
                 writer = csv.DictWriter(file, fieldnames=["first", "last", "house"])
-                
+
                 writer.writeheader()
                 for data in datas:
                     writer.writerow({"first": data["first"], "last": data["last"], "house": data["house"]})
-            
+
         except FileNotFoundError:
             sys.exit(f"Could not read {sys.argv[1]}")
 main()
