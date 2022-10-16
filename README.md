@@ -11,4 +11,6 @@ An introduction to programming using a language called Python where I learned th
 - Regular Expressions
 - Object-oriented Programming
 
-[View My Certificate Here](https://certificates.cs50.io/60fc3212-c162-4464-9d0d-cc6de52535c7.pdf?size=letter)
+![Certificate](https://certificates.cs50.io/60fc3212-c162-4464-9d0d-cc6de52535c7.png?size=letter)
+
+[For legitimacy click here](https://certificates.cs50.io/60fc3212-c162-4464-9d0d-cc6de52535c7.png?size=letter)
