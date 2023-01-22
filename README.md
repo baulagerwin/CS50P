@@ -7,6 +7,7 @@ An introduction to programming using a language called Python where I learned th
 - Loops
 - Exceptions
 - Libraries
+- Unit Tests
 - File I/O
 - Regular Expressions
 - Object-oriented Programming
